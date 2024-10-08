@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Rammstein</title>
+    <!-- Enlace a la fuente "Metal Mania" de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Aplicar la fuente Metal Mania a todo el cuerpo */
+        body {
+            font-family: 'Metal Mania', cursive;
+            background-color: #1b1b1b;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            font-family: 'Metal Mania', cursive;
+            color: #675b5b;
+        }
+        header {
+            background-color: #000000;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Permite posicionar el logo dentro del header */
+        }
+        header img {
+            position: absolute;
+            top: 10px; /* Ajusta el espacio desde la parte superior */
+            left: 10px; /* Ajusta el espacio desde la parte izquierda */
+            width: 50px; /* Tamaño del logo */
+            height: auto; /* Mantiene la proporción del logo */
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        .bio-section {
+            padding: 20px;
+            background-color: #2b2b2b;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #675b5b;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+        }
+        .integrantes-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 500px; /* Ajusta la altura máxima */
+            overflow-y: auto;  /* Agrega scroll si excede el espacio */
+        }
+        .integrantes-section button {
+            font-family: 'Metal Mania', cursive;
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .integrantes-section button:hover {
+            background-color: #444;
+        }
+        .info-integrante {
+            display: none;
+            margin-top: 10px;
+        }
+        .album-section {
+            padding: 20px;
+            background-color: #2b2b2b;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .album-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .album-buttons button {
+            font-family: 'Metal Mania', cursive;
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .album-buttons button:hover {
+            background-color: #444;
+        }
+        .info-integrante img {
+            width: 150px;
+            height: auto;
+            margin-right: 10px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease; /* Animación de transformación */
+            cursor: pointer;
+        }
+        .info-integrante img:hover {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+            box-shadow: 0 0 20px #ffffff, 0 0 30px #FFD700, 0 0 40px #FF6347, 0 0 50px #FFD700; /* Sombra metálica brillante */
+        }
+        .info-integrante img:active {
+            transform: scale(1.10); /* Aumenta aún más al hacer clic */
+            box-shadow: 0 0 40px #ffffff, 0 0 50px #FFD700, 0 0 60px #FF6347, 0 0 70px #FFD700;
+            border: 2px solid #ce0808; /* Borde dorado */
+        }
+        .info-integrante p {
+            display: inline-block;
+            vertical-align: top;
+            width: calc(100% - 170px);
+        }
+    </style>
+    
+    <script>
+        // Función para mostrar/ocultar la información del integrante seleccionado
+        function mostrarInfo(id) {
+            var info = document.getElementById(id);
+            if (info.style.display === "none" || info.style.display === "") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Cabecera de la página con el título de la banda -->
+    <header>
+        <img src="images/logo_r.png" alt="Logo de la página">
+        <h1>RAMMSTEIN</h1>
+        <nav>
+            <ul>
+                <li><a href="#biografia">Biografía</a></li>
+                <li><a href="#redes">Redes Sociales</a></li>
+                <li><a href="#integrantes">Integrantes</a></li>
+                <li><a href="#albumes">Álbumes</a></li>
+                <li><a href="https://open.spotify.com/artist/6wWVKhxIU2cEi0K81v7HvP" target="_blank">Spotify</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de biografía de la banda -->
+    <section id="biografia" class="bio-section">
+        <h2>Biografía</h2>
+        <p>Rammstein es una banda alemana de metal industrial formada en Berlín en 1994. Conocidos por su poderoso sonido, letras provocadoras, y espectaculares shows en vivo, han logrado ser una de las bandas más icónicas del género.</p>
+        <p>Su nombre se deriva de la ciudad de Ramstein, Alemania, famosa por un accidente aéreo en 1988. La banda ha lanzado siete álbumes de estudio, siendo "Mutter" y "Liebe ist für alle da" algunos de los más exitosos.</p>
+    </section>
+
+    <!-- Sección de enlaces a redes sociales -->
+    <section id="redes" class="bio-section">
+        <h2>Redes Sociales</h2>
+        <p>Puedes seguir a Rammstein en sus redes sociales oficiales:</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/Rammstein" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/rammsteinofficial/" target="_blank">Instagram</a>
+            <a href="https://twitter.com/rammstein" target="_blank">Twitter</a>
+            <a href="https://www.youtube.com/user/rammstein" target="_blank">YouTube</a>
+        </div>
+    </section>
+
+    <!-- Sección de integrantes de la banda -->
+    <section id="integrantes" class="bio-section">
+        <h2>Integrantes</h2>
+        <div class="integrantes-section">
+            <!-- Botón para Till Lindemann -->
+            <button onclick="mostrarInfo('info-till')">Till Lindemann - Vocalista</button>
+            <div id="info-till" class="info-integrante">
+                <img src="images/till.jpeg" alt="Till Lindemann">
+                <p>Till Lindemann es el vocalista principal de Rammstein. Nació el 4 de enero de 1963 y es conocido por su distintiva voz grave y su presencia escénica intensa. Además de su carrera musical, también ha publicado poesía.</p>
+            </div>
+
+            <!-- Botón para Richard Z. Kruspe -->
+            <button onclick="mostrarInfo('info-richard')">Richard Z. Kruspe - Guitarrista</button>
+            <div id="info-richard" class="info-integrante">
+                <img src="images/Richard.jpeg" alt="Richard Z. Kruspe">
+                <p>Richard Z. Kruspe es el guitarrista principal de Rammstein. Nació el 24 de junio de 1967. Además de su trabajo en Rammstein, también es el fundador de la banda Emigrate, en la que desempeña un papel destacado.</p>
+            </div>
+
+            <!-- Botón para Paul Landers -->
+            <button onclick="mostrarInfo('info-paul')">Paul Landers - Guitarrista</button>
+            <div id="info-paul" class="info-integrante">
+                <img src="images/paul.jpeg" alt="Paul Landers">
+                <p>Paul Landers es el guitarrista rítmico de Rammstein. Nació el 9 de diciembre de 1964. Su estilo de guitarra complementa perfectamente el sonido de la banda, y su energía en el escenario es contagiosa.</p>
+            </div>
+
+            <!-- Botón para Oliver Riedel -->
+            <button onclick="mostrarInfo('info-oliver')">Oliver Riedel - Bajista</button>
+            <div id="info-oliver" class="info-integrante">
+                <img src="images/Oliver.jpeg" alt="Oliver Riedel">
+                <p>Oliver Riedel es el bajista de Rammstein. Nació el 11 de abril de 1971. Su estilo de tocar el bajo aporta una base sólida y potente a la música de la banda.</p>
+            </div>
+
+            <!-- Botón para Christoph Schneider -->
+            <button onclick="mostrarInfo('info-christoph')">Christoph Schneider - Baterista</button>
+            <div id="info-christoph" class="info-integrante">
+                <img src="images/christoph.jpeg" alt="Christoph Schneider">
+                <p>Christoph Schneider es el baterista de Rammstein. Nació el 11 de mayo de 1966. Su estilo de tocar la batería es enérgico y preciso, proporcionando el ritmo que define el sonido de la banda.</p>
+            </div>
+
+            <!-- Botón para Christian "Flake" Lorenz -->
+            <button onclick="mostrarInfo('info-christian')">Christian "Flake" Lorenz - Tecladista</button>
+            <div id="info-christian" class="info-integrante">
+                <img src="images/flake.jpeg" alt="Christian Lorenz">
+                <p>Christian "Flake" Lorenz es el tecladista de Rammstein. Nació el 16 de noviembre de 1966. Su estilo excéntrico y sus aportes electrónicos son una parte esencial del sonido único de la banda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de álbumes de la banda -->
+    <section id="albumes" class="album-section">
+        <h2>Álbumes</h2>
+        <div class="album-buttons">
+            <button onclick="window.open('https://open.spotify.com/intl-es/album/6HlDm9fzYxk4vkkr3YEvSv?si=37Tphcc8SS-OtyrqqwZC5g', '_blank')">Herzeleid (1995)</button>
+            <button onclick="window.open('https://open.spotify.com/intl-es/album/0C9p8YMtbdOkcXPPlEmZvY?si=QvkJtScgRbyOqNAVJm6s9g', '_blank')">Sehnsucht (1997)</button>
+            <button onclick="window.open('https://open.spotify.com/intl-es/album/7ikuEzL6xeAgu6yT6YVLy7?si=uRF6VIvuSBqAyZ6zCk5P6A', '_blank')">Mutter (2001)</button>
+            <button onclick="window.open('https://open.spotify.com/intl-es/album/09qHS2BgOLqi3SMkbauxdJ?si=Ol3Lzyi-Tf6erPy-ksm7QQ', '_blank')">Reise, Reise (2004)</button>
+            <button onclick="window.open('https://open.spotify.com/intl-es/album/3ujsh5jQMOFqIbP7sWruEt?si=fEbVH8TlSNCTQhl5s1350w', '_blank')">Rosenrot (2005)</button>
+            <button onclick="window.open('https://open.spotify.com/intl-es/album/3pksjSyo1w4vAPOenAzM4Z?si=p4az2O37T7qOd5p39QtcQw', '_blank')">Liebe ist für alle da (2009)</button>
+            <button onclick="window.open('https://open.spotify.com/intl-es/album/1LoyJQVHPLHE3fCCS8Juek?si=tWkgy96QR9eeNC9PpRD3tw', '_blank')">Rammstein (2019)</button>
+            <button onclick="window.open('https://open.spotify.com/intl-es/album/75OE7M0wduJyffbffehHuR?si=U_DN5q9mSP-aL2YpG2DcJA', '_blank')">Zeit (2022)</button>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Rammstein. PAGINA NO OFICIAL.</p>
+    </footer>
+
+</body>
+</html>
